@@ -7,6 +7,12 @@ import VueRouter from 'vue-router'
 //1.3导入rouder.js路由模块
 import router from  './router.js'
 Vue.use(VueRouter)
+// 导入格式化时间的插件
+import moment from 'moment'
+// 定义全局的过滤器
+Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
+    return moment(dataStr).format(pattern)
+})
 //导入mint-ui头部文件
 import { Header, Swipe, SwipeItem } from 'mint-ui';
 Vue.component(Header.name, Header);
@@ -19,6 +25,8 @@ import './lib/mui/css/icons-extra.css'
 import VueResource from 'vue-resource'
 //安装vue-resource
 Vue.use(VueResource)
+// 设置请求的根路径
+Vue.http.options.root = 'http://vue.studyit.io';
 var vm = new Vue({
     el : '#app',
     render : c=>c(app),

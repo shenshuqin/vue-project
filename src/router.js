@@ -5,14 +5,19 @@ import HomeContainer from './components/tabbar/HomeContainer.vue'
 import MemberContainer from './components/tabbar/MemberContainer.vue'
 import SearchContainer from './components/tabbar/SearchContainer.vue'
 import ShopcartContainer from './components/tabbar/ShopcarContainer.vue'
+import newsList from './components/news/newsList.vue'
+import NewsInfo from './components/news/NewsInfo.vue'
 // 3. 创建路由对象
 var router = new VueRouter({
   routes: [ //配置路由规则
-      { path: '/', redirect: '/home' },
+    { path: '/', redirect: '/home' },
     {path:'/home' , component:HomeContainer},
+    {path:'/home/newslist' , component:newsList},
     {path:'/member' , component:MemberContainer},
     {path:'/shopcart' , component:ShopcartContainer},
-    {path:'/search' , component:SearchContainer}
+    {path:'/search' , component:SearchContainer},
+    {path: '/home/newsinfo/:id', component: NewsInfo }
+
   ],
   linkActiveClass: 'mui-active'
 })
