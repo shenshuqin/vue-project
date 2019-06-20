@@ -6,6 +6,7 @@
 <!--                <img :src="item.img">-->
 <!--            </mt-swipe-item>-->
 <!--        </mt-swipe>-->
+<!--        <swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>-->
         <mt-swipe :auto="4000" class="mint-swiper">
             <mt-swipe-item class="mt-swipe-item">1</mt-swipe-item>
             <mt-swipe-item class="mt-swipe-item">2</mt-swipe-item>
